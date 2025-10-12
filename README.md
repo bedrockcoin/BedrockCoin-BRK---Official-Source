@@ -1,85 +1,104 @@
-BedrockCoin Core integration/staging tree
-=====================================
+![BedrockCoin Logo](BedrockCoin.png)
 
-[![Build Status](https://travis-ci.org/bedrockcoin-project/bedrockcoin.svg?branch=master)](https://travis-ci.org/bedrockcoin-project/bedrockcoin)
+**BedrockCoin (BRK)** is a secure, decentralized cryptocurrency built on **Scrypt Proof-of-Work**, designed for long-term stability and fair distribution. With a fixed supply and predictable emission schedule, BRK offers a reliable foundation for digital transactions and value storage.
 
+---
 
+📊 Technical Specifications
 
-What is BedrockCoin?
-----------------
+| Parameter                     | Value                     |
+|------------------------------|---------------------------|
+| **Algorithm**                | Scrypt PoW                |
+| **Coin Name**                | BedrockCoin               |
+| **Ticker**                   | BRK                       |
+| **Block Time**               | ~12 minutes               |
+| **Difficulty Adjustment**    | Every 120 minutes (10 blocks) |
+| **Block Reward**             | 2 BRK                     |
+| **Total Supply**             | 7,460,000 BRK             |
+| **Halving Interval**         | Every 1,865,000 blocks    |
+| **P2P Port**                 | 24732                     |
+| **RPC Port**                 | 24731                     |
+| **Mainnet Address Prefix**   | `B`                       |
+| **Testnet Address Prefix**   | `P`                       |
+| **Transaction Confirmations**| 3 blocks                  |
 
-BedrockCoin is an experimental digital currency that enables instant payments to
-anyone, anywhere in the world. BedrockCoin uses peer-to-peer technology to operate
-with no central authority: managing transactions and issuing money are carried
-out collectively by the network. BedrockCoin Core is the name of open source
-software which enables the use of this currency.
+> 💡 All consensus and network parameters are defined in [`src/chainparams.cpp`](src/chainparams.cpp).
 
-For more information, as well as an immediately useable, binary version of
-the BedrockCoin Core software, see []().
+---
 
-License
--------
+🚀 Build from Source
 
-BedrockCoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
-information or see https://opensource.org/licenses/MIT.
+Linux (Ubuntu/Debian)
+```bash
+# Install dependencies
+sudo apt update
+sudo apt install build-essential libtool autotools-dev automake pkg-config bsdmainutils python3 libssl-dev libevent-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-test-dev libboost-thread-dev
 
-Development Process
--------------------
+# Clone and build
+git clone https://github.com/bedrockcoin/BedrockCoin-BRK---Official-Source.git
+cd BedrockCoin-BRK---Official-Source
+./autogen.sh
+./configure
+make
+```
 
-The `master` branch is regularly built (see `doc/build-*.md` for instructions) and tested, but it is not guaranteed to be
-completely stable. [Tags](/tags) are created
-regularly from release branches to indicate new official, stable release versions of BedrockCoin Core.
+macOS (with Homebrew)
+```bash
+brew install automake berkeley-db4 libtool boost miniupnpc openssl pkg-config python3 qt5
+git clone https://github.com/bedrockcoin/BedrockCoin-BRK---Official-Source.git
+cd BedrockCoin-BRK---Official-Source
+./autogen.sh
+./configure
+make
+```
 
-The https://github.com/bedrockcoin-project/gui repository is used exclusively for the
-development of the GUI. Its master branch is identical in all monotree
-repositories. Release branches and tags do not exist, so please do not fork
-that repository unless it is for development reasons.
+> 📌 **Binaries**:  
+> - Daemon: `src/bedrockcoind`  
+> - CLI Tool: `src/bedrockcoin-cli`
 
-The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md)
-and useful hints for developers can be found in [doc/developer-notes.md](doc/developer-notes.md).
+---
 
-The developer [mailing list](https://groups.google.com/forum/#!forum/bedrockcoin-dev)
-should be used to discuss complicated or controversial changes before working
-on a patch set.
+📦 Wallet Setup
 
-Developer IRC can be found on Freenode at #bedrockcoin-dev.
+- **Default Data Directory**:  
+  - Linux: `~/.bedrockcoin/`  
+  - Windows: `%APPDATA%\BedrockCoin\`  
+  - macOS: `~/Library/Application Support/BedrockCoin/`
 
-Testing
--------
+- **Example `bedrockcoin.conf`**:
+  ```ini
+  rpcuser=your_username
+  rpcpassword=your_strong_password
+  server=1
+  daemon=1
+  ```
 
-Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test on short notice. Please be patient and help out by testing
-other people's pull requests, and remember this is a security-critical project where any mistake might cost people
-lots of money.
+> 🔒 **Never share your `wallet.dat` or private keys.**
 
-### Automated Testing
+---
 
-Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
-submit new unit tests for old code. Unit tests can be compiled and run
-(assuming they weren't disabled in configure) with: `make check`. Further details on running
-and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
+🔗 Official Resources
 
-There are also [regression and integration tests](/test), written
-in Python, that are run automatically on the build server.
-These tests can be run (if the [test dependencies](/test) are installed) with: `test/functional/test_runner.py`
+- **Website**: [https://thebedrockcoin.web.app](https://thebedrockcoin.web.app)  
+- **Block Explorer**: [http://explorebrk.duckdns.org:3001](http://explorebrk.duckdns.org:3001)  
+- **Discord**: [Join Community](https://discord.gg/VwN7yZr8)  
+- **Telegram**: [@BedrockCoinGroup](https://t.me/bedrockcoinoficial)  
 
-The Travis CI system makes sure that every pull request is built for Windows, Linux, and macOS, and that unit/sanity tests are run automatically.
+> ⚠️ Twitter is currently unavailable. Follow updates via Discord or Telegram.
 
-### Manual Quality Assurance (QA) Testing
+---
 
-Changes should be tested by somebody other than the developer who wrote the
-code. This is especially important for large or high-risk changes. It is useful
-to add a test plan to the pull request description if testing the changes is
-not straightforward.
+🤝 Contributing
 
-Translations
-------------
+We welcome community contributions!  
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting pull requests.
 
-We only accept translation fixes that are submitted through [Bitcoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
-Translations are converted to BedrockCoin periodically.
+- Report issues via [GitHub Issues](https://github.com/bedrockcoin/BedrockCoin-BRK---Official-Source/issues)
+- Follow the [Bitcoin Core coding style](https://github.com/bitcoin/bitcoin/blob/master/doc/developer-notes.md)
 
-Translations are periodically pulled from Transifex and merged into the git repository. See the
-[translation process](doc/translation_process.md) for details on how this works.
+---
 
-**Important**: We do not accept translation changes as GitHub pull requests because the next
-pull from Transifex would automatically overwrite them again.
+## 📜 License
+
+BedrockCoin is open-source software released under the **[MIT License](COPYING)**.  
+Transparency, security, and decentralization are at the core of our mission.
