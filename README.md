@@ -11,8 +11,8 @@
 | **Algorithm**                | Scrypt PoW                |
 | **Coin Name**                | BedrockCoin               |
 | **Ticker**                   | BRK                       |
-| **Block Time**               | ~12 minutes               |
-| **Difficulty Adjustment**    | Every 120 minutes (10 blocks) |
+| **Block Time**               | ~5 minutes               |
+| **Difficulty Adjustment**    | Every 120 minutes (24 blocks) |
 | **Block Reward**             | 2 BRK                     |
 | **Total Supply**             | 7,460,000 BRK             |
 | **Halving Interval**         | Every 1,865,000 blocks    |
